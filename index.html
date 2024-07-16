@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="encriptador__logo">
+        <img src="assets/logo.svg" alt="Logo de Alura" />
+      </div>
+      <div class="encriptador__mensaje">
+        <div class="contenedor__mensaje">
+          <textarea
+            name=""
+            id="campoTexto"
+            placeholder="Ingrese el texto aquí"
+          ></textarea>
+          <div class="contenedor__control">
+            <small
+              ><img
+                src="assets/exclamacion.svg"
+                alt="Imagen de exclamación"
+              />Solo letras minúsculas y sin acentos</small
+            >
+            <div class="contenedor__botones">
+              <button onclick="encriptar();" class="boton__encriptar">
+                Encriptar
+              </button>
+              <button onclick="desencriptar();" class="boton__desencriptar">
+                Desencriptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="encriptador__resultado__mensaje">
+        <div class="contenedor__resultado__mensaje">
+          <div class="resultado__no__encontrado" id="resultado__no__encontrado">
+            <img src="assets/figura.svg" alt="Imagen de figura" />
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+          <div class="resultado__encontrado" id="resultado__encontrado">
+            <div class="resultado">
+              <h3 id="respuesta">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut,
+                sequi? Autem non iure, provident facilis dolores perferendis
+                illum ducimus vel repudiandae, minima saepe. Deserunt
+                perspiciatis quae velit, earum ad debitis.
+              </h3>
+            </div>
+            <button
+              onclick="copiar();"
+              class="boton__copiar"
+              id="copiar"
+              disabled
+            >
+              Copiar
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Desarrollado por David Serna Restrepo</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

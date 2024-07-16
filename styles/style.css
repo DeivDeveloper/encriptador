@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  --color-primario: #f3f5fc;
+  --color-secundario: #0a3871;
+  --color-adicional-primario: #ffffff;
+  --color-adicional-secundario: #495057;
+  --color-hover-primario: #072b57;
+  --color-hover-secundario: #d8dfe8;
+
+  --fuente-principal: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-primario);
+  font-family: var(--fuente-principal);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  padding: 2.5%;
+}
+
+main .encriptador__logo {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2em;
+}
+
+main .encriptador__logo img {
+  width: 2.5em;
+}
+
+main .encriptador__mensaje {
+  width: 60vw;
+  padding-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+main .encriptador__mensaje .contenedor__mensaje {
+  width: 70%;
+}
+
+main .encriptador__mensaje .contenedor__mensaje textarea {
+  width: 100%;
+  resize: none;
+  background: transparent;
+  font-size: 2em;
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  color: var(--color-secundario);
+}
+
+main .encriptador__mensaje .contenedor__mensaje textarea:focus {
+  outline: none;
+}
+
+main .encriptador__mensaje .contenedor__mensaje textarea::placeholder {
+  color: var(--color-secundario);
+}
+
+main .encriptador__mensaje .contenedor__control {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  padding-top: 1em;
+}
+
+main .encriptador__resultado__mensaje {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+main .encriptador__resultado__mensaje .contenedor__resultado__mensaje {
+  background-color: var(--color-adicional-primario);
+  height: 90vh;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  box-shadow: 0em 0em 2em 0.1em #00000030;
+}
+
+main
+  .encriptador__resultado__mensaje
+  .contenedor__resultado__mensaje
+  .resultado {
+  overflow: auto;
+  margin-top: 1em;
+}
+
+main .contenedor__resultado__mensaje .resultado__no__encontrado {
+  text-align: center;
+}
+
+main .contenedor__resultado__mensaje .resultado__encontrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+main .contenedor__resultado__mensaje .resultado__encontrado h3 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+main .contenedor__resultado__mensaje .resultado__encontrado button {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+main .contenedor__resultado__mensaje .resultado__no__encontrado img {
+  width: 100%;
+}
+
+main .contenedor__resultado__mensaje .resultado__encontrado,
+main .contenedor__resultado__mensaje .resultado__no__encontrado {
+  padding: 2em;
+}
+
+main .contenedor__resultado__mensaje .resultado__encontrado {
+  display: none;
+}
+
+.advertencia {
+  width: 1rem;
+  height: 1rem;
+}
+
+.contenedor__control small {
+  color: #495057;
+  opacity: 0.8;
+  display: flex;
+  align-items: end;
+}
+
+.contenedor__control small img {
+  padding-right: 0.5em;
+}
+
+main .contenedor__botones {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+main button {
+  padding: 24px;
+  width: 100%;
+  height: 67px;
+  border-radius: 24px;
+  border: 2px solid var(--color-secundario);
+  cursor: pointer;
+  transition: border-color 250ms, background-color 250ms;
+}
+
+main .boton__encriptar:hover {
+  background-color: var(--color-hover-primario);
+  border-color: var(--color-hover-primario);
+}
+
+main .boton__encriptar {
+  background-color: var(--color-secundario);
+  color: var(--color-adicional-primario);
+  font-weight: 400;
+}
+
+main .boton__desencriptar,
+.boton__copiar {
+  background: transparent;
+  color: var(--color-secundario);
+  font-weight: 400;
+  transition: border-color 250ms, background-color 250ms;
+}
+
+main .boton__desencriptar:hover,
+.boton__copiar:hover {
+  background-color: var(--color-hover-secundario);
+}
+
+main .boton__copiar:disabled {
+  background-color: var(--color-hover-secundario);
+}
+
+.footer {
+  background-color: var(--color-secundario);
+  padding: 12px;
+  color: var(--color-primario);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1400px) {
+  main .encriptador__mensaje {
+    width: 50vw;
+  }
+
+  main .encriptador__resultado__mensaje {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  main {
+    flex-direction: column;
+  }
+
+  main .encriptador__logo,
+  main .encriptador__mensaje,
+  main .encriptador__resultado__mensaje {
+    width: 100%;
+  }
+
+  main .encriptador__logo {
+    justify-content: flex-start;
+  }
+
+  main .encriptador__logo img {
+    padding-left: 2em;
+  }
+
+  main .encriptador__mensaje {
+    padding-top: 5vh;
+  }
+
+  main .encriptador__mensaje .contenedor__mensaje {
+    width: 100%;
+    padding: 2em;
+  }
+
+  main .encriptador__mensaje .contenedor__mensaje textarea {
+    height: 50vh;
+  }
+
+  main .encriptador__resultado__mensaje .contenedor__resultado__mensaje {
+    width: 100%;
+    margin: 2em;
+    height: auto;
+  }
+
+  main .encriptador__resultado__mensaje .contenedor__resultado__mensaje img {
+    display: none;
+  }
+
+  main
+    .encriptador__resultado__mensaje
+    .contenedor__resultado__mensaje
+    .resultado {
+    max-height: 65vh;
+  }
+
+  main .encriptador__resultado__mensaje .contenedor__resultado__mensaje button {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main .contenedor__botones {
+    flex-direction: column;
+  }
+}
